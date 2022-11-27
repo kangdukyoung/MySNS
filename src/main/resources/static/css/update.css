@@ -1,0 +1,115 @@
+@import "header.css";
+
+.whole-page{
+  border:1px solid black;
+  display:flex;
+}
+.left-page{
+  background-color: #f6f6f6;
+  width:35%
+}
+.right-page{
+  background-color: #f6f6f6;
+  width:35%
+}
+.page {
+  align-items: center;
+  width:30%;
+}
+
+/*프로필셋팅 섹션*/
+.setting-container {
+  border:1px solid black;
+}
+
+.setting-container .setting__content {
+  border-left: 1px solid gainsboro;
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  margin-right: 10%;
+}
+.setting-container .item__username{
+  margin-top:10px;
+}
+
+/*프로필 셋팅 내이미지 + 아이디*/
+.setting-container .setting__content .content-item__01 {
+  display: flex;
+  margin: 50px 0 40px 0;
+
+}
+
+/*프로필 셋팅 요소들 박스*/
+.setting-container .setting__content form > div {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+/* 유저이미지, 유저아이디*/
+.setting-container .setting__content .content-item__01 .item__img {
+  flex: 2;
+  text-align: right;
+  padding-right: 30px;
+}
+.setting-container .setting__content .content-item__01 .item__img img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+.setting-container .setting__content .content-item__01 .item__username {
+  flex: 4;
+}
+.setting-container .setting__content .content-item__01 .item__btn h2 {
+  font-size: 18px;
+}
+
+/*form 입력요소 타이틀*/
+.setting-container .setting__content div .item__title {
+  flex: 2;
+  margin-right: 30px;
+  text-align: right;
+  font-size: 13px;
+}
+
+/*form 입력요소 인풋박스*/
+.setting-container .setting__content div .item__input {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+}
+
+/*form 입력요소 인풋*/
+.setting-container .setting__content div .item__input input {
+  border: 1px solid #dbdbdb;
+  height: 30px;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+/*form 입력요소 소개부분*/
+.setting-container .setting__content div .item__input textarea {
+  border: 1px solid #dbdbdb;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+/* 비즈니스나 반려동물 어쩌고*/
+
+/*제출버튼*/
+.setting-container .setting__content .content-item__11 .item__input {
+  margin-top:10px;
+}
+
+/*제출버튼*/
+.setting-container .setting__content .content-item__11 .item__input button {
+  border: 0;
+  background-color: #53bfff;
+  padding: 5px 9px;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+}
+
+

@@ -1,0 +1,273 @@
+@import "header.css";
+
+.total{
+  align-items: center;
+  width:30%;
+}
+.total .title{
+  background-color: #f6f6f6;
+}
+.total .page{
+  width:100%;
+}
+.story-block{
+  border:1px solid #d2d2d2;
+  border-radius: 7px;
+}
+/*게시물리스트*/
+.page .con .story-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.up-page{
+  background-color: #f6f6f6;
+  height: 20px;
+}
+/*게시물 리스트 아이템*/
+.page .con .story-list .story-list__item {
+  border-radius: 50%;
+}
+
+/*리스트 아이템 헤더부분*/
+.page .con .story-list .story-list__item .sl__item__header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #3d4756;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+/*리스트 아이템 헤더 div*/
+.page .con .story-list .story-list__item .sl__item__header .story_username {
+  margin-left:5px;
+  color:white;
+  font-weight: bold;
+}
+
+/*리스트 아이템 헤더 이미지영역 박스*/
+.page
+  .con
+  .story-list
+  .story-list__item
+  .sl__item__header
+  div:nth-child(1) {
+  width: 40px;
+  height: 40px;
+  padding: 3px;
+  border-radius: 50%;
+  position: relative;
+}
+
+/*리스트 아이템 헤더 실제이미지*/
+.page
+  .con
+  .story-list
+  .story-list__item
+  .sl__item__header
+  div:nth-child(1)
+  img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/* 게시물 이미지 박스*/
+.page .con .story-list .story-list__item .sl__item__img {
+  margin-top:15px;
+  height: 400px;
+  min-height: 200px;
+  border-radius: 25px;
+}
+
+/* 게시물 이미지*/
+.page .con .story-list .story-list__item .sl__item__img img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 게시물 이미지 밑에 영역들 */
+.page .con .story-list .story-list__item .sl__item__contents {
+  display: flex;
+  flex-direction: column;
+}
+
+/*좋아요 아이콘, 갯수 영역 */
+.like_div{
+  display:flex;
+}
+
+/*좋아요 버튼영역*/
+.page
+  .con
+  .story-list
+  .story-list__item
+  .sl__item__contents
+  .sl__item__contents__icon {
+  height: 40px;
+  padding: 5px 0;
+}
+
+/*좋아요 실제 버튼*/
+.page
+  .con
+  .story-list
+  .story-list__item
+  .sl__item__contents
+  .sl__item__contents__icon
+  button {
+  background-color: transparent;
+  width: 30px;
+  font-size: 20px;
+  border: 0;
+  cursor: pointer;
+}
+
+/*게시물 내용*/
+.sl__item__contents__content{
+
+}
+sl__item__contents__content .image_caption{
+  font-size:12px;
+
+}
+
+/*게시물 like 갯수스타일*/
+.page
+  .con
+  .story-list
+  .story-list__item
+  .sl__item__contents .like{
+	background-color: transparent;
+	border: 0;
+	color: #aaa;
+	font-size: 12px;
+    margin-top:10px;
+
+}
+/*게시물 좋아요 count값 */
+.page
+  .con
+  .story-list
+  .story-list__item
+.sl__item__contents .like b{
+	margin-right: 5px;
+}
+
+/*좋아요,댓글달기 버튼 영역*/
+.goodsAndComments{
+  display:flex;
+  justify-content: space-around;
+  height:30px;
+
+}
+
+.goodsAndComments .goods{
+  border:none;
+  background-color: white;
+  width:50%;
+}
+.goodsAndComments .goods:hover{
+  background-color: #c7dfcf;
+}
+.goodsAndComments .comments{
+  border:none;
+  background-color: white;
+  width:50%;
+}
+.goodsAndComments .comments:hover{
+  background-color: #c7dfcf;
+}
+
+/*태그영역*/
+.sl__item__contents__tags{
+  height: 40px;
+  padding: 5px 10px;
+  color: #0080ff;
+}
+
+.commenter_image{
+  width:25px;
+  border-radius: 50%;
+
+}
+
+/*댓글 */
+.page
+  .con
+  .story-list
+  .story-list__item
+  .sl__item__contents
+  .sl__item__contents__comment
+  {
+  margin-top:5px;
+  display:flex;
+  justify-content:space-between;
+  background-color: transparent;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.username_content{
+  text-align:center;
+  text-align: center;
+  padding:5px 0;
+
+}
+/*댓글 삭제버튼*/
+
+.delete-btn{
+  width:40px;
+  cursor:pointer;
+  border: none;
+  background-color: #e3e3e3;
+  border-radius: 4px;
+  margin-right:2px;
+}
+
+/* 댓글 입력창*/
+.page .con .story-list .story-list__item .sl__item__input {
+  margin-top:10px;
+  display: flex;
+  border-top: 1px solid #bdbdbd;
+  border-radius: 4px;
+  border-bottom: 1px solid #bdbdbd;
+}
+
+/*입력 인풋*/
+.page .con .story-list .story-list__item .sl__item__input input {
+  flex: 9;
+  height: 30px;
+  border: 0;
+  padding-left: 15px;
+  border-radius: 4px;
+}
+/* 입력하기 버튼 */
+.page .con .story-list .story-list__item .sl__item__input button {
+  flex: 1;
+  height: 30px;
+  font-size: 12px;
+  color:white;
+  background-color: #3d4756;
+  border:none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* Event */
+.page
+  .con
+  .story-list
+  .story-list__item
+  .sl__item__contents
+  .sl__item__contents__icon
+  button:first-child
+  .active {
+  color: blue;
+}
+
+.profile-image {
+  border: 1px solid #000000;
+}
+

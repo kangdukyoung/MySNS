@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+  font-family: 'Gowun Dodum', sans-serif;
+}
+
+.header {
+  height: 54px;
+  background: #fff;
+  width: 100%;
+  border: 1px solid gainsboro;
+
+}
+
+.header .con {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+
+
+.navi > .navi-list {
+  display: flex;
+}
+.navi > .navi-list .navi-item {
+
+  text-align: center;
+  margin: 0 15px;
+  display: flex;
+}
+.navi > .navi-list .navi-item a {
+  font-size: 14px;
+  color: #000000;
+  margin-top: 6px;
+}
+
+@media screen and (max-width: 935px) {
+  .header .con {
+    width: 100%;
+  }
+}

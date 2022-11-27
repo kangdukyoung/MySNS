@@ -1,0 +1,105 @@
+* {
+  font-family: 'Gowun Dodum', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+}
+button {
+  cursor: pointer;
+}
+
+.login {
+  width: 100%;
+  display:flex;
+
+}
+.left-page{
+  width:37.5%;
+  background-color: #f6f6f6;
+}
+.right-page{
+  width:37.5%;
+  background-color: #f6f6f6;
+}
+.middle-page{
+  width:25%;
+}
+.up-page{
+  height:100px;
+  background-color: #f6f6f6;
+}
+.page-bottom{
+  background-color: #f6f6f6;
+  height:500px;
+}
+.login__form__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height:400px;
+}
+.login-text{
+  font-size:25px;
+  color:#3d4756;
+  font-weight: bold;
+}
+.login-register{
+  font-size:17px;
+}
+.login__form{
+  text-align: center;
+  background-color: #fff;
+}
+
+/*로그인 인풋박스*/
+.login__input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+}
+
+/*로그인 인풋태그*/
+.login__input input {
+  width: 80%;
+  height: 30px;
+  border-radius: 5px;
+  margin-bottom: 6px;
+}
+
+/*로그인 버튼*/
+.login__input button {
+  border: 0;
+  outline: 0;
+  width: 80%;
+  height: 30px;
+  background-color: #3d4756;
+  color: white;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+/* 페이스북로그인 영역 */
+.login__facebook {
+  margin-top: 15px;
+}
+/*페이스북 로그인 버튼*/
+.login__facebook button {
+  width: 80%;
+  height: 30px;
+}
+
+/* 버튼디자인 */
+.cta {
+  margin-right: 10px;
+  padding: 5px 9px;
+  border-radius: 4px;
+  color: #262626;
+  font-weight: bold;
+}
+
+/*회원가입*/
+

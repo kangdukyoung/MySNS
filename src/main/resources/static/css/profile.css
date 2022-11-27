@@ -1,0 +1,373 @@
+@import "header.css";
+
+.middle-page{
+  width:30%;
+}
+.page-bottom{
+  background-color: #f6f6f6;
+  height:240px;
+}
+.up-page{
+  padding-top:70px;
+  padding-bottom:30px;
+  font-size:20px;
+  font-weight: bold;
+}
+
+.profile {
+  border:1px solid black;
+  display: flex;
+}
+.profileContainer {
+  border:1px solid black;
+  display: flex;
+  width: 100%;
+}
+
+.profile .profile-left {
+  border:1px solid black;
+  width:35%;
+}
+
+.profile .profile-right {
+  border:1px solid black;
+  width:65%;
+}
+
+.profile .profile-left .profile-img-wrap {
+  width: 120px;
+  height: 120px;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.profile .profile-left .profile-img-wrap img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.profile .profile-right .name-group {
+  display: flex;
+  margin-bottom: 20px;
+  margin-right:20px;
+  font-size:15px;
+}
+.profile .profile-right .name-group .user_name {
+  font-size:12px;
+  margin-top:20px;
+  margin-left:20px;
+}
+.profile .profile-right .name-group .cta {
+  margin-top:10px;
+  margin-left: 10px;
+  font-size:10px;
+  height:34px;
+  border-radius: 3px;
+  color: #262626;
+}
+.profile .profile-right .name-group .modi {
+  color: #15158f;
+  margin-top:10px;
+  border: none;
+  background: none;
+}
+.profile .profile-right .name-group .modi i {
+  font-size: 20px;
+  padding: 8px;
+}
+.profile .profile-right .subscribe {
+  height: 28px;
+  border:1px solid black;
+}
+.profile .profile-right .subscribe ul {
+  display: flex;
+}
+.profile .profile-right .subscribe ul li {
+  margin-left:20px;
+}
+.profile .profile-right .subscribe ul li a {
+  font-size: 12px;
+  color: #646464;
+}
+.profile .profile-right .state{
+  border:1px solid black;
+
+}
+.profile .profile-right .state .bio{
+  margin-top:10px;
+  margin-left:20px;
+  font-size:12px;
+}
+.profile .profile-right .state .website{
+  margin-top:10px;
+  margin-left:20px;
+  margin-bottom: 10px;
+  font-size:12px;
+
+}
+
+
+/*중간div*/
+.tab-content-title{
+  font-size:13px;
+  font-weight: bold;
+  padding-top:40px;
+  background-color: #f6f6f6;
+}
+/*중간div끝*/
+
+#tab-1-content{
+  border:1px solid blue;
+}
+#tab-1-content .title{
+  font-size:13px;
+}
+/* Tab-content 1*/
+#tab-content #tab-1-content {
+  border:1px solid black;
+  width: 100%;
+}
+#tab-content #tab-1-content .tab-1-content-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+}
+#tab-content #tab-1-content .tab-1-content-inner .img-box {
+  position: relative;
+  height: 200px;
+}
+#tab-content #tab-1-content .tab-1-content-inner .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* Sub2 */
+.popular {
+  width: 100%;
+}
+.popular .profileContainer {
+  flex-direction: column;
+}
+.popular .profileContainer .popular-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  margin-bottom: 30px;
+}
+.popular .profileContainer .popular-gallery.popular-top .p-img-box {
+  width: 100%;
+  min-height: 292px;
+}
+.popular .profileContainer .popular-gallery.popular-top .p-img-box:nth-child(2) {
+  grid-column: 2/4;
+  grid-row: 1/3;
+}
+.popular .profileContainer .popular-gallery .p-img-box {
+  width: 292px;
+  min-height: 292px;
+}
+.popular .profileContainer .popular-gallery .p-img-box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Event */
+#tab-1-content,
+#tab-2-content,
+#tab-3-content,
+#tab-5-content {
+  display: none;
+}
+.show {
+  display: block !important;
+}
+.tab-item {
+  border-top: 1px solid transparent;
+}
+.tab-border {
+  border-top: 1px solid #000;
+}
+.tab-border a i,
+.tab-border a span {
+  color: #000;
+  font-weight: bold;
+}
+
+
+.profile-image {
+  border: 1px solid black;
+}
+
+.modal-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.modal-image .modal {
+  width: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.modal-image .modal button {
+  border: 0;
+  background-color: transparent;
+  height: 48px;
+  cursor: pointer;
+}
+.modal-image .modal p {
+  line-height: 50px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+  color: #222;
+  font-size: 18px;
+}
+.modal-image .modal button:nth-child(2) {
+  font-weight: 600;
+  color: #0095f6;
+}
+.modal-image .modal button:not(:last-child) {
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.modal-subscribe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.modal-subscribe .subscribe {
+  width: 600px;
+  height: 500px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.modal-subscribe .subscribe .subscribe-header {
+  text-align: center;
+  line-height: 50px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+.modal-subscribe .subscribe .subscribe-header button {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background-color: transparent;
+  border: 0;
+}
+.modal-subscribe .subscribe .subscribe-header button i {
+  font-size: 20px;
+}
+.modal-subscribe .subscribe .subscribe-list {
+  overflow: hidden;
+  overflow-y: auto;
+}
+.modal-subscribe .subscribe .subscribe-list .subscribe__item {
+  display: flex;
+  height: 70px;
+  padding: 10px;
+}
+.modal-subscribe .subscribe .subscribe-list .subscribe__item .subscribe__img {
+  width: 80px;
+  text-align: center;
+}
+.modal-subscribe .subscribe .subscribe-list .subscribe__item .subscribe__img {
+  width: 80px;
+  text-align: center;
+}
+.modal-subscribe .subscribe .subscribe-list .subscribe__item .subscribe__img img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.modal-subscribe .subscribe .subscribe-list .subscribe__item .subscribe__text {
+  padding-top: 5px;
+}
+.modal-subscribe .subscribe .subscribe-list .subscribe__item .subscribe__text h2 {
+  font-size: 16px;
+  line-height: 50px;
+}
+.modal-subscribe .subscribe .subscribe-list .subscribe__item .subscribe__btn {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.cta {
+  margin-right: 10px;
+  padding: 10px 10px;
+  border: 1px solid rgba(var(--ca6, 219, 219, 219), 1);
+  border-radius: 4px;
+  color: #262626;
+  font-weight: bold;
+  background: transparent;
+}
+.cta.blue {
+  background: #0095f6 !important;
+  color: #fff !important;
+}
+
+.modal-info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.modal-info .modal {
+  width: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.modal-info .modal button {
+  border: 0;
+  background-color: transparent;
+  height: 48px;
+  cursor: pointer;
+}
+
+.modal-info .modal button:not(:last-child) {
+  border-bottom: 1px solid #dbdbdb;
+}
+
+/* Animation */
+@keyframes loading {
+  100% {
+    stroke: #cd476b;
+
+    transform: rotate(200deg);
+  }
+}
+
+/* Media */
+@media screen and (max-width: 935px) {
+  .profileContainer {
+    width: 100%;
+  }
+}
