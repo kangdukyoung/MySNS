@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface SubscribeRepository extends JpaRepository<Subscribe, Integer>{
 
-	@Modifying
+	@Modifying // DB수정(select, JPA이 제공하는 메서드쿼리에는 적용X)
 	@Query(value = "INSERT INTO subscribe(fromUserId, toUserId, createDate) VALUES(:fromUserId, :toUserId, now())",nativeQuery = true)
 	void mySubscribe(int fromUserId, int toUserId);
 	

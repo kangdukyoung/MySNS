@@ -29,7 +29,7 @@ import lombok.NoArgsConstructor;
 		uniqueConstraints = {
 				@UniqueConstraint(
 					name="likes_uk",
-					columnNames= {"userId","imageId"}
+					columnNames= {"userId","imageId"} // 유저가 같은 이미지를 두번 좋아요할 수 없으니 중복을 막아준다.
 				)
 		}
 		)

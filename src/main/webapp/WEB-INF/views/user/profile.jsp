@@ -8,14 +8,21 @@
 	<div class="left-page"></div>
 	<div class="middle-page">
 		<div class="up-page">
-			나의 프로필 정보
+			<c:choose>
+				<c:when test="${dto.pageOwnerState}">
+					나의 프로필 정보
+				</c:when>
+				<c:otherwise>
+					프로필 정보
+				</c:otherwise>
+			</c:choose>
 		</div>
 		<div class="profile">
 			<!--유저정보 컨테이너-->
 			<div class="profileContainer">
 				<!--유저이미지-->
 				<div class="profile-left">
-					<div class="profile-img-wrap story-border"
+					<div class="profile-img-wrap"
 						onclick="popup('.modal-image')">
 
 						<form id="userProfileImageForm">
@@ -51,30 +58,36 @@
 							</c:otherwise>
 						</c:choose>
 
+						<c:choose>
+							<c:when test="${dto.pageOwnerState}">
+								<button class="modi" onclick="popup('.modal-info')">
+									<i class="fas fa-cog"></i>
+								</button>
+							</c:when>
+							<c:otherwise>
 
-						<button class="modi" onclick="popup('.modal-info')">
-							<i class="fas fa-cog"></i>
-						</button>
+							</c:otherwise>
+						</c:choose>
+
 					</div>
 
 					<div class="subscribe">
 						<ul>
 							<li><a href=""> 게시물<span>${dto.imageCount}</span>
 							</a></li>
-							<li><a href="javascript:subscribeInfoModalOpen(${dto.user.id });">팔로잉<span>${dto.subscribeCount}</span>
+							<li><a href="javascript:subscribeInfoModalOpen(${dto.user.id});">팔로잉<span>${dto.subscribeCount}</span>
 							</a></li>
 						</ul>
 					</div>
 					<div class="state">
 						<div class="bio">${dto.user.bio}</div>
-						<div class="website">${dto.user.website}</div>
 					</div>
 				</div>
 				<!--유저정보 및 사진등록 구독하기 End-->
 			</div>
 		</div>
 		<div class="tab-content-title">
-			사진/영상
+			업로드한 사진
 		</div>
 
 		<div id="tab-content">
@@ -124,6 +137,7 @@
 
 <!--프로필사진 바꾸기 모달end-->
 
+
 <div class="modal-subscribe">
 	<div class="subscribe">
 		<div class="subscribe-header">
@@ -132,12 +146,10 @@
 				<i class="fas fa-times"></i>
 			</button>
 		</div>
-
 		<div class="subscribe-list" id="subscribeModalList">
 
 		</div>
 	</div>
-
 </div>
 
 

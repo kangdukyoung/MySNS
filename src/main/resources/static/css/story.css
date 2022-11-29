@@ -14,6 +14,7 @@
   border:1px solid #d2d2d2;
   border-radius: 7px;
 }
+
 /*게시물리스트*/
 .page .con .story-list {
   display: flex;
@@ -23,10 +24,6 @@
 .up-page{
   background-color: #f6f6f6;
   height: 20px;
-}
-/*게시물 리스트 아이템*/
-.page .con .story-list .story-list__item {
-  border-radius: 50%;
 }
 
 /*리스트 아이템 헤더부분*/
@@ -170,7 +167,8 @@ sl__item__contents__content .image_caption{
   width:50%;
 }
 .goodsAndComments .goods:hover{
-  background-color: #c7dfcf;
+  background-color: #eeeeee;
+
 }
 .goodsAndComments .comments{
   border:none;
@@ -178,7 +176,7 @@ sl__item__contents__content .image_caption{
   width:50%;
 }
 .goodsAndComments .comments:hover{
-  background-color: #c7dfcf;
+  background-color: #eeeeee;
 }
 
 /*태그영역*/

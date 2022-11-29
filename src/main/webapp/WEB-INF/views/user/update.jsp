@@ -6,6 +6,7 @@
 <div class="whole-page">
 	<div class="left-page"></div>
 	<div class="page">
+		<div class="up-page"></div>
 		<div class="setting-container">
 			<div class="setting__content">
 
@@ -44,8 +45,7 @@
 					<div class="content-item__05">
 						<div class="item__title">웹사이트</div>
 						<div class="item__input">
-							<input type="text" name="website" placeholder="웹 사이트"
-								   value="${principal.user.website}" />
+
 						</div>
 					</div>
 					<div class="content-item__06">
@@ -72,7 +72,7 @@
 					<div class="content-item__10">
 						<div class="item__title">성별</div>
 						<div class="item__input">
-							<input type="text" name="gender" value="${principal.user.gender}" />
+
 						</div>
 					</div>
 
@@ -91,7 +91,7 @@
 	</div>
 	<div class="right-page"></div>
 </div>
-
+<div class="page-bottom"></div>
 
 
 <script src="/js/update.js"></script>

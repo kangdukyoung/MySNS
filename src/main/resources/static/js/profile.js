@@ -1,15 +1,3 @@
-/**
-  1. 유저 프로파일 페이지
-  (1) 유저 프로파일 페이지 구독하기, 구독취소
-  (2) 구독자 정보 모달 보기
-  (3) 구독자 정보 모달에서 구독하기, 구독취소
-  (4) 유저 프로필 사진 변경
-  (5) 사용자 정보 메뉴 열기 닫기
-  (6) 사용자 정보(회원정보, 로그아웃, 닫기) 모달
-  (7) 사용자 프로파일 이미지 메뉴(사진업로드, 취소) 모달 
-  (8) 구독자 정보 모달 닫기
- */
-
 // (1) 유저 프로파일 페이지 구독하기, 구독취소
 function toggleSubscribe(toUserId, obj) {
 	if ($(obj).text() === "구독취소") {
@@ -62,7 +50,7 @@ function subscribeInfoModalOpen(pageUserId) {
 function getSubscribeModalItem(u) {
 	let item = `<div class="subscribe__item" id="subscribeModalItem-${u.id}">
 	<div class="subscribe__img">
-		<img src="/upload/${u.profileImageUrl}" onerror="this.src='/images/person.jpeg'"/>
+		<img src="/upload/${u.profileImageUrl}" onerror="this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'"/>
 	</div>
 	<div class="subscribe__text">
 		<h2>${u.username}</h2>

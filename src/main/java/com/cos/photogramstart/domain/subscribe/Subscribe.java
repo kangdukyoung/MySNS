@@ -46,9 +46,7 @@ public class Subscribe {
 	@JoinColumn(name="toUserId")
 	@ManyToOne
 	private User toUser;
-	
-	
-	
+
 	private LocalDateTime createDate;
 	
 	@PrePersist //db에 insert되기 직전에 실행

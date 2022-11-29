@@ -5,39 +5,38 @@
 }
 .page-bottom{
   background-color: #f6f6f6;
-  height:240px;
+  height:400px;
 }
 .up-page{
   padding-top:70px;
-  padding-bottom:30px;
+  padding-bottom:40px;
   font-size:20px;
   font-weight: bold;
 }
 
 .profile {
-  border:1px solid black;
   display: flex;
 }
 .profileContainer {
-  border:1px solid black;
+  border: 1px solid #cbcbcb;
+  border-radius: 5px;
   display: flex;
   width: 100%;
 }
 
 .profile .profile-left {
-  border:1px solid black;
-  width:35%;
+  width:30%;
 }
 
 .profile .profile-right {
-  border:1px solid black;
-  width:65%;
+  width:70%;
 }
 
 .profile .profile-left .profile-img-wrap {
-  width: 120px;
-  height: 120px;
-  padding: 6px;
+  padding-left:10px;
+  padding-top:7px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -78,7 +77,7 @@
 }
 .profile .profile-right .subscribe {
   height: 28px;
-  border:1px solid black;
+
 }
 .profile .profile-right .subscribe ul {
   display: flex;
@@ -91,7 +90,6 @@
   color: #646464;
 }
 .profile .profile-right .state{
-  border:1px solid black;
 
 }
 .profile .profile-right .state .bio{
@@ -118,14 +116,13 @@
 /*중간div끝*/
 
 #tab-1-content{
-  border:1px solid blue;
+  border: 1px solid #c0c0c0;
 }
 #tab-1-content .title{
   font-size:13px;
 }
 /* Tab-content 1*/
 #tab-content #tab-1-content {
-  border:1px solid black;
   width: 100%;
 }
 #tab-content #tab-1-content .tab-1-content-inner {
@@ -189,14 +186,12 @@
   border-top: 1px solid transparent;
 }
 .tab-border {
-  border-top: 1px solid #000;
 }
 .tab-border a i,
 .tab-border a span {
   color: #000;
   font-weight: bold;
 }
-
 
 .profile-image {
   border: 1px solid black;

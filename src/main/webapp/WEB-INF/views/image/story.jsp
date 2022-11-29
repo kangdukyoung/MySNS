@@ -6,7 +6,7 @@
 
 	<div class="total">
 		<div class="title">
-			<div class="story-title">스토리보드</div>
+			<div class="story-title"></div>
 		</div>
 		<div class="page">
 			<div class="con">
@@ -20,7 +20,7 @@
 
 	<div class="right-page"></div>
 </div>
-
+<div class="page-bottom"></div>
 <script src="/js/story.js"></script>
 </body>
 </html>

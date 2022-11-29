@@ -1,7 +1,6 @@
 @import "header.css";
 
 .whole-page{
-  border:1px solid black;
   display:flex;
 }
 .left-page{
@@ -12,6 +11,10 @@
   background-color: #f6f6f6;
   width:35%
 }
+.page-bottom{
+  background-color: #f6f6f6;
+  height:300px;
+}
 .page {
   align-items: center;
   width:30%;
@@ -19,7 +22,9 @@
 
 /*프로필셋팅 섹션*/
 .setting-container {
-  border:1px solid black;
+  height:600px;
+  border: 1px solid #cecece;
+  border-radius: 5px;
 }
 
 .setting-container .setting__content {
@@ -31,6 +36,7 @@
 }
 .setting-container .item__username{
   margin-top:10px;
+  font-weight: bold;
 }
 
 /*프로필 셋팅 내이미지 + 아이디*/
@@ -105,11 +111,12 @@
 /*제출버튼*/
 .setting-container .setting__content .content-item__11 .item__input button {
   border: 0;
-  background-color: #53bfff;
+  background-color: #3d4756;
   padding: 5px 9px;
   border-radius: 2px;
   color: #fff;
   cursor: pointer;
+  font-weight: bold;
 }
 
 

@@ -61,8 +61,7 @@ public class Image {
 	
 	@Transient
 	private int likeCount;
-	
-	
+
 	private LocalDateTime createDate;
 	@PrePersist
 	public void createDate() {

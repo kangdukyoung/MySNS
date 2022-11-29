@@ -13,3 +13,7 @@ function imageChoose(obj) {
 	}
 	reader.readAsDataURL(f); // 이 코드 실행시 reader.onload 실행됨.
 }
+$("#file").on('change',function(){
+	let fileName = $("#file").val();
+	$(".upload-name").val(fileName);
+});

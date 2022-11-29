@@ -96,9 +96,7 @@ public class UserService {
 
 		userEntity.setPassword(encPassword);
 		userEntity.setBio(user.getBio());
-		userEntity.setWebsite(user.getWebsite());
 		userEntity.setPhone(user.getPhone());
-		userEntity.setGender(user.getGender());
 		return userEntity;
 	}
 	

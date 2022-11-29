@@ -22,13 +22,13 @@ public class SubscribeApiController {
 	
 	@PostMapping("/api/subscribe/{toUserId}")
 	public ResponseEntity<?> subscribe(@AuthenticationPrincipal PrincipalDetail principalDetail, @PathVariable int toUserId){
-		subscribeService.구독하기(principalDetail.getUser().getId(),toUserId);	
+		subscribeService.doSubscribe(principalDetail.getUser().getId(),toUserId);
 		return new ResponseEntity<>(new CMRespDto<>(1,"구독하기 성공",null),HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/api/subscribe/{toUserId}")
 	public ResponseEntity<?> unsubscribe(@AuthenticationPrincipal PrincipalDetail principalDetail, @PathVariable int toUserId){
-		subscribeService.구독취소(principalDetail.getUser().getId(), toUserId);
+		subscribeService.notSubscribe(principalDetail.getUser().getId(), toUserId);
 		return new ResponseEntity<>(new CMRespDto<>(1,"구독취소 성공",null),HttpStatus.OK);
 	}
 	

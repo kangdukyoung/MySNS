@@ -34,21 +34,22 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //번호증가전략이 db를 따라간다.
 	private int id;
 
+	@Column(nullable=false)
+	private String name;
+
 	@Column(length = 100, unique = true)
 	private String username;
 
 	@Column(nullable=false)
 	private String password;
-	
-	@Column(nullable=false)
-	private String name;
+
 	
 	@Column(nullable=false)	
 	private String email;
 	
-	private String gender;
+
 	private String phone;
-	private String website;
+
 	private String bio;
 	private String profileImageUrl;
 	private String role;
@@ -68,8 +69,4 @@ public class User {
 	}
 	
 
-	
-	
-	
-	
 }
