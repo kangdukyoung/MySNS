@@ -13,6 +13,7 @@ import com.cos.photogramstart.domain.user.User;
 import lombok.Data;
 
 import javax.transaction.Transactional;
+import javax.websocket.OnOpen;
 
 
 @Data
@@ -24,6 +25,7 @@ public class PrincipalDetail implements UserDetails,OAuth2User{
 	public PrincipalDetail(User user) {
 		this.user = user;
 	}
+
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

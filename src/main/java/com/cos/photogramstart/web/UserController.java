@@ -19,7 +19,8 @@ import lombok.RequiredArgsConstructor;
 public class UserController {
 
 	private final UserService userService;
-	
+
+	//마이페이지
 	@GetMapping("/user/{pageUserId}")
 	public String user(@PathVariable int pageUserId, @AuthenticationPrincipal PrincipalDetail principalDetail,  Model model) {
 		UserProfileDto dto = userService.회원프로필(pageUserId, principalDetail.getUser().getId());
@@ -27,9 +28,16 @@ public class UserController {
 		return "user/profile";
 	}
 
-
+	//회원정보수정
 	@GetMapping("/user/{id}/update")
 	public String update(@PathVariable int id, @AuthenticationPrincipal PrincipalDetail principalDetail) {
 		return "user/update";
 	}
+
+	//채팅
+//	@GetMapping("/user/{id}/chat")
+//	public String chat(@PathVariable int id, @AuthenticationPrincipal PrincipalDetail principalDetail) {
+//		return "user/chat";
+//	}
+
 }

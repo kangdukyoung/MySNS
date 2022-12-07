@@ -13,7 +13,7 @@ import com.cos.photogramstart.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 
 import javax.transaction.Transactional;
-
+import javax.websocket.OnOpen;
 
 
 @RequiredArgsConstructor

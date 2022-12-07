@@ -42,14 +42,9 @@
 							<input type="password" name="password" placeholder="비밀번호"  required="required"/>
 						</div>
 					</div>
-					<div class="content-item__05">
-						<div class="item__title">웹사이트</div>
-						<div class="item__input">
 
-						</div>
-					</div>
 					<div class="content-item__06">
-						<div class="item__title">소개</div>
+						<div class="item__title">자기소개</div>
 						<div class="item__input">
 							<textarea name="bio" id="" rows="3">${principal.user.bio}</textarea>
 						</div>
@@ -69,12 +64,7 @@
 								   value="${principal.user.phone}" />
 						</div>
 					</div>
-					<div class="content-item__10">
-						<div class="item__title">성별</div>
-						<div class="item__input">
 
-						</div>
-					</div>
 
 					<!--제출버튼-->
 					<div class="content-item__11">

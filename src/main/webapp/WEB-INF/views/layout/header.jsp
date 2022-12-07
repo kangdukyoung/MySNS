@@ -17,8 +17,13 @@
 
 	<!-- 제이쿼리 -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	
+
+	<%--sockjs--%>
+	<script type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs.min.js"></script>
+
 	<!-- Style -->
+	<link rel="stylesheet" href="/css/chatt.css">
 	<link rel="stylesheet" href="/css/header.css">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/story.css">
@@ -36,6 +41,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -53,8 +59,11 @@
 					<li class="navi-item"><a href="/">
 						좋아요목록
 						</a></li>
-					<li class="navi-item"><a href="/">
+					<li class="navi-item"><a href="/mychat/${principal.user.id}">
 						채팅
+					</a></li>
+					<li class="navi-item"><a href="/chatroom/">
+						채팅방
 					</a></li>
 					<li class="navi-item"><a href="/user/${principal.user.id }">
 						마이페이지

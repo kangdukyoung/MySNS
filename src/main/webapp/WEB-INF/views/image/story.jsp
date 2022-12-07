@@ -22,5 +22,4 @@
 </div>
 <div class="page-bottom"></div>
 <script src="/js/story.js"></script>
-</body>
-</html>
+
