@@ -5,17 +5,22 @@
     <div class="left-page"></div>
     <div class="middle-page">
         <div class="makeRoom">
-            <button onclick="createRoom()">채팅방 만들기</button>
+            <button><a href="/createRoom">채팅방 만들기</a></button>
         </div>
         <br>
-        <div class="room-list">
-            <div class="room">
-                <div id="room-name">세번째 방</div>
-                <div id="room-creator">윤예지</div>
-                <button onclick="enterRoom()">입장</button>
-            </div>
-            <br>
+        <div id="room-list">
+            <c:forEach var="chatroom" items="${chatrooms}">
+                <div id="room">
+                    <div id="room-name">${chatroom.name}</div>
+                    <div id="room-creator">${chatroom.creator}</div>
+                    현재인원: <div id="room-exist">${chatroom.existNumber}</div>
+                    제한인원: <div id="room-restrict">${chatroom.restrictNumber}</div>
 
+                    <button id="enterRoom"><a href="/chatroom/${chatroom.id}/mychat/${principal.user.id}">입장</a></button>
+                    <input type="hidden" id="roomId" value="${chatroom.id}">
+                </div>
+                <br>
+            </c:forEach>
         </div>
 
 

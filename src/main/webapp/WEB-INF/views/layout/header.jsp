@@ -23,7 +23,7 @@
 			src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs.min.js"></script>
 
 	<!-- Style -->
-	<link rel="stylesheet" href="/css/chatt.css">
+	<link rel="stylesheet" href="/css/chat.css">
 	<link rel="stylesheet" href="/css/header.css">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/story.css">
@@ -48,6 +48,9 @@
 	
 	<!-- principalId 담아두는곳 -->
 	<input type="hidden" id="principalId" value="${principal.user.id}">
+	<input type="hidden" id="principalName" value="${principal.user.name}">
+
+
 
 	<header class="header">
 		<div class="con">

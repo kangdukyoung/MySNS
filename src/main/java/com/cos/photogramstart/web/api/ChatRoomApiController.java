@@ -39,19 +39,16 @@ public class ChatRoomApiController {
     @PostMapping("api/chatroom")
     public ResponseEntity<?> saveRoom(@RequestBody ChatRoomDto chatRoomDto, @AuthenticationPrincipal PrincipalDetail principalDetail){
 
-        System.out.println("------------------------");
-        System.out.println(chatRoomDto.getRoom_name());
-        System.out.println(chatRoomDto.getRoom_creator());
-        ChatRoom chatRoom = chatRoomService.createRoom(chatRoomDto.getRoom_name(),chatRoomDto.getRoom_creator());
-
+        ChatRoom chatRoom = chatRoomService.createRoom(chatRoomDto.getRoom_name(),chatRoomDto.getRoom_restrictNumber(),principalDetail.getUsername());
         return new ResponseEntity<>(new CMRespDto<>(1,"채팅방만들기 성공",chatRoom),HttpStatus.CREATED);
     }
 
-//    @DeleteMapping("/api/comment/{id}")
-//    public ResponseEntity<?> commentDelete(@PathVariable int id){
-//
-//        commentService.댓글삭제(id);
-//        return new ResponseEntity<>(new CMRespDto<>(1,"댓글삭제 성공",null),HttpStatus.OK);
-//    }
+    @PostMapping("api/chatroom/{roomId}/up")
+    public ResponseEntity<?> EnterRoom(@PathVariable int roomId){
+        chatRoomService.increaseExist(roomId);
 
+        return new ResponseEntity<>(new CMRespDto<>(1,"현재인원 +1 성공",""),HttpStatus.CREATED);
+    }
 }
+
+

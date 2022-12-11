@@ -23,10 +23,13 @@ public class ChatRoom {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String name;
+    private String name; //방제목
 
-    private String creator;
-    private int user_number;
+    private String creator; //방장
+
+
+    private int restrictNumber; //제한인원
+    private int existNumber; //현재인원
 
     private LocalDateTime createDate;
 

@@ -9,10 +9,7 @@ import javax.validation.constraints.NotBlank;
 
 @Data
 public class ChatRoomDto {
-
     private String room_name;
-    private String room_creator;
-
-
+    private int room_restrictNumber;
 
 }
