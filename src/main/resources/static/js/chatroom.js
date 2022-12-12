@@ -1,33 +1,39 @@
-var enterRoom = document.getElementById('enterRoom');
 
-var principalId = $("#principalId").val();
-var roomId = $("#roomId").val();
-var roomRestrict = $("#room-restrict").text();
-var roomExist = $("#room-exist").text();
 
-enterRoom.onclick = function(){
+function enterRoom(e,roomId){
 
-    var data = {
+    let roomExist = $(`#room-exist-${roomId}`).text();
+    let roomRestrict = $(`#room-restrict-${roomId}`).text();
+
+
+    let data = {
         room_exist : roomExist,
         room_restrict : roomRestrict
     };
-    if(roomExist >= roomRestrict){
-        alert("인원이 다 찼습니다.")
-        location.reload();
-    }else {
 
-        $.ajax({
-            type: "post",
-            url: `/api/chatroom/${roomId}/up`,
-            data: JSON.stringify(data), //(자바스크립트 데이터를 JSON으로 변환하여 보낸다.)
-            contentType: "application/json; charset=utf-8",   //보낼 데이터의 형식
-            dataType: "json" //응답받을 데이터의 형식
-        }).done(res => {
-            alert(res);
-        }).fail(error => {
-            console.log(error);
-        });
+    if(Number(roomExist) >= Number(roomRestrict)){
+        alert("인원이 다 찼습니다.");
+        e.preventDefault();
+        return false;
     }
+
+    $.ajax({
+        type: "post",
+        url: `/api/chatroom/${roomId}/up`,
+        data: JSON.stringify(data), //(자바스크립트 데이터를 JSON으로 변환하여 보낸다.)
+        contentType: "application/json; charset=utf-8",   //보낼 데이터의 형식
+        dataType: "json" //응답받을 데이터의 형식
+    }).done(res => {
+
+        let before = $(`#room-exist-${roomId}`).text();
+        let plusOne = Number(before)+1;
+        $(`#room-exist-${roomId}`).text(plusOne);
+
+
+    }).fail(error => {
+        console.log(error);
+    });
+
 }
 
 

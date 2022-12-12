@@ -39,11 +39,21 @@ public class ChatRoomService {
         return chatroom;
     }
     @Transactional
-    public void increaseExist(int room_id){
+    public ChatRoom increaseExist(int room_id){
         ChatRoom chatroom = chatRoomRepository.findById(room_id).orElseThrow(()->{
             return new CustomValidationApiException("찾을 수 없는 방입니다.");
         });
         chatroom.setExistNumber(chatroom.getExistNumber()+1);
-        chatRoomRepository.save(chatroom);
+        return chatRoomRepository.save(chatroom);
     }
+    @Transactional
+    public ChatRoom decreaseExist(int room_id){
+        ChatRoom chatroom = chatRoomRepository.findById(room_id).orElseThrow(()->{
+            return new CustomValidationApiException("찾을 수 없는 방입니다.");
+        });
+        chatroom.setExistNumber(chatroom.getExistNumber()-1);
+        return chatRoomRepository.save(chatroom);
+    }
+
+
 }

@@ -45,9 +45,8 @@ public class ChatRoomApiController {
 
     @PostMapping("api/chatroom/{roomId}/up")
     public ResponseEntity<?> EnterRoom(@PathVariable int roomId){
-        chatRoomService.increaseExist(roomId);
-
-        return new ResponseEntity<>(new CMRespDto<>(1,"현재인원 +1 성공",""),HttpStatus.CREATED);
+        ChatRoom chatRoom = chatRoomService.increaseExist(roomId);
+        return new ResponseEntity<>(new CMRespDto<>(1,"현재인원 +1 성공",chatRoom),HttpStatus.CREATED);
     }
 }
 

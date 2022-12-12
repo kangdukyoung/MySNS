@@ -1,6 +1,7 @@
 package com.cos.photogramstart.Service;
 
 
+import com.cos.photogramstart.config.webSocket.ServerEndpointConfigurator;
 import com.cos.photogramstart.domain.chatRoom.ChatRoom;
 import com.cos.photogramstart.domain.chatRoom.ChatRoomRepository;
 import lombok.RequiredArgsConstructor;
@@ -16,18 +17,16 @@ import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.util.*;
 
-
+@RequiredArgsConstructor
 @Service
-@ServerEndpoint(value="/chatroom/{roomId}/mychat/{userId}")
+@ServerEndpoint(value="/chatroom/{roomId}/mychat/{userId}",configurator = ServerEndpointConfigurator.class)
 public class ChatService {
     private static Set<Session> sessionSet = Collections.synchronizedSet(new HashSet<Session>());
     private static Map<Integer, ArrayList<Session>> sessionMap = Collections.synchronizedMap(new HashMap<Integer, ArrayList<Session>>());
-
+    private final ChatRoomService chatRoomService;
 
     @OnOpen
     public void onOpen(Session s, @PathParam("roomId") int roomId, @PathParam("userId") Long userId ) {
-
-
 
         // 방 처음 들어왔으면 해당 방 세션리스트생성
         if(!sessionMap.containsKey(roomId)){
@@ -61,8 +60,6 @@ public class ChatService {
 
     @OnMessage
     public void onMessage(String msg, Session s) throws Exception{
-        System.out.println("receive message : " + msg);
-
         //사용자가 어느 방에 있는지 찾기
         Integer findkey = -1;
         for(int key: sessionMap.keySet()){
@@ -101,6 +98,9 @@ public class ChatService {
             }
         }
         sessionMap.get(findkey).remove(s);
+
+        //방인원 -1
+        ChatRoom chatRoom = chatRoomService.decreaseExist(findkey);
 
 
     }
