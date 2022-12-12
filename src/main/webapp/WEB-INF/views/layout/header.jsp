@@ -23,6 +23,7 @@
 			src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs.min.js"></script>
 
 	<!-- Style -->
+	<link rel="stylesheet" href="/css/chatroom.css">
 	<link rel="stylesheet" href="/css/chat.css">
 	<link rel="stylesheet" href="/css/header.css">
 	<link rel="stylesheet" href="/css/style.css">
@@ -62,11 +63,8 @@
 					<li class="navi-item"><a href="/">
 						좋아요목록
 						</a></li>
-					<li class="navi-item"><a href="/mychat/${principal.user.id}">
-						채팅
-					</a></li>
 					<li class="navi-item"><a href="/chatroom/">
-						채팅방
+						오픈채팅
 					</a></li>
 					<li class="navi-item"><a href="/user/${principal.user.id }">
 						마이페이지

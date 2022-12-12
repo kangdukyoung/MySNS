@@ -5,14 +5,18 @@
     <div class="left-page"></div>
     <div class="middle-page">
         <div class="makeRoom">
-            <button><a href="/createRoom">채팅방 만들기</a></button>
+            <button class="makeRoom-btn"><a href="/createRoom">채팅방 만들기</a></button>
         </div>
         <br>
         <div id="room-list">
             <c:forEach var="chatroom" items="${chatrooms}">
                 <div id="room">
                     <div id="room-name">${chatroom.name}</div>
-                    <div id="room-creator">${chatroom.creator}</div>
+                    <div id="creator-info">
+                        <img class="image" src="/upload/${chatroom.user.profileImageUrl}" onerror="this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'" />
+                        <div id="room-creator" id="room-creator">${chatroom.user.name}</div>
+                    </div>
+
                     현재인원: <div id="room-exist-${chatroom.id}">${chatroom.existNumber}</div>
                     제한인원: <div id="room-restrict-${chatroom.id}">${chatroom.restrictNumber}</div>
 

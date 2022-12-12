@@ -18,11 +18,11 @@ public class ChatRoomService {
     private final ChatRoomRepository chatRoomRepository;
 
     @Transactional
-    public ChatRoom createRoom(String name, int restrictNumber, String username){
+    public ChatRoom createRoom(String name, int restrictNumber, User user){
         ChatRoom chatRoom = new ChatRoom();
         chatRoom.setName(name);
         chatRoom.setRestrictNumber(restrictNumber);
-        chatRoom.setCreator(username);
+        chatRoom.setUser(user);
         return chatRoomRepository.save(chatRoom);
     }
 
@@ -51,7 +51,9 @@ public class ChatRoomService {
         ChatRoom chatroom = chatRoomRepository.findById(room_id).orElseThrow(()->{
             return new CustomValidationApiException("찾을 수 없는 방입니다.");
         });
-        chatroom.setExistNumber(chatroom.getExistNumber()-1);
+
+        if(chatroom.getExistNumber()!=0)
+            chatroom.setExistNumber(chatroom.getExistNumber()-1);
         return chatRoomRepository.save(chatroom);
     }
 

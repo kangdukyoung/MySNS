@@ -39,7 +39,7 @@ public class ChatRoomApiController {
     @PostMapping("api/chatroom")
     public ResponseEntity<?> saveRoom(@RequestBody ChatRoomDto chatRoomDto, @AuthenticationPrincipal PrincipalDetail principalDetail){
 
-        ChatRoom chatRoom = chatRoomService.createRoom(chatRoomDto.getRoom_name(),chatRoomDto.getRoom_restrictNumber(),principalDetail.getUsername());
+        ChatRoom chatRoom = chatRoomService.createRoom(chatRoomDto.getRoom_name(),chatRoomDto.getRoom_restrictNumber(),principalDetail.getUser());
         return new ResponseEntity<>(new CMRespDto<>(1,"채팅방만들기 성공",chatRoom),HttpStatus.CREATED);
     }
 

@@ -25,7 +25,9 @@ public class ChatRoom {
 
     private String name; //방제목
 
-    private String creator; //방장
+    @JoinColumn(name="creator")
+    @ManyToOne(fetch = FetchType.EAGER)
+    private User user;
 
 
     private int restrictNumber; //제한인원

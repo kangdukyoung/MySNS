@@ -8,7 +8,7 @@
         <div id='chat'>
             <input type="hidden" id="roomId" value="${chatroom.id}">
             <div id="room-name">${chatroom.name}</div>
-            <div id="room-creator">${chatroom.creator}</div>
+            <div id="room-creator">${chatroom.user.name}</div>
             <div id='talk'></div>
             <div id='sendZone'>
                 <textarea id='msg' value='hi...' ></textarea>
