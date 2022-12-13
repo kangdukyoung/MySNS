@@ -1,5 +1,4 @@
-
-
+//채팅방 입장
 function enterRoom(e,roomId){
 
     let roomExist = $(`#room-exist-${roomId}`).text();
@@ -35,6 +34,15 @@ function enterRoom(e,roomId){
     });
 
 }
+//채팅방 삭제
+function deleteRoom(roomId){
+    alert("삭제되었습니다.");
+
+
+
+
+}
+
 
 
 // //채팅방 만들기

@@ -57,7 +57,12 @@ public class ChatController {
 
     }
 
-
+    //채팅방 삭제
+    @GetMapping("/chatroom/delete/{room_id}")
+    public String deleteRoom(@PathVariable int room_id,@AuthenticationPrincipal PrincipalDetail principalDetail){
+        chatRoomService.deleteOneRoom(room_id);
+        return "redirect:/chatroom";
+    }
 
 
 

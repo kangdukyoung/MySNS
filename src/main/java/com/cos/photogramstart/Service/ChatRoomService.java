@@ -3,6 +3,7 @@ package com.cos.photogramstart.Service;
 import com.cos.photogramstart.domain.chatRoom.ChatRoom;
 import com.cos.photogramstart.domain.chatRoom.ChatRoomRepository;
 import com.cos.photogramstart.domain.user.User;
+import com.cos.photogramstart.handler.ex.CustomApiException;
 import com.cos.photogramstart.handler.ex.CustomValidationApiException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -58,5 +59,15 @@ public class ChatRoomService {
         return chatRoomRepository.save(chatroom);
     }
 
+    @Transactional
+    public void deleteOneRoom(int room_id){
+
+        try {
+            chatRoomRepository.deleteById(room_id);
+        }catch(Exception e) {
+            throw new CustomApiException(e.getMessage());
+        }
+
+    }
 
 }

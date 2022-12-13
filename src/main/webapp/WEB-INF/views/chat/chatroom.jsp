@@ -11,7 +11,17 @@
         <div id="room-list">
             <c:forEach var="chatroom" items="${chatrooms}">
                 <div id="room">
-                    <div id="room-name">${chatroom.name}</div>
+                    <div id="room-title">
+                        <div id="room-name">${chatroom.name}</div>
+                        <c:choose>
+                            <c:when test="${chatroom.user.id == principal.user.id}">
+                                <button id="delete-room" onclick="deleteRoom(${chatroom.id})"><a href="/chatroom/delete/${chatroom.id}"><i class="fas fa-trash-alt fa-lg"></i></a></button>
+                            </c:when>
+                            <c:otherwise>
+                            </c:otherwise>
+                        </c:choose>
+                    </div>
+
                     <div id="room-description">${chatroom.description}</div>
 
                     <div id="room-member">
