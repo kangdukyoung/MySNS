@@ -53,7 +53,7 @@ function getSubscribeModalItem(u) {
 		<img src="/upload/${u.profileImageUrl}" onerror="this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'"/>
 	</div>
 	<div class="subscribe__text">
-		<h2>${u.username}</h2>
+		<h2>${u.name}</h2>
 	</div>
 	<div class="subscribe__btn">`;
 

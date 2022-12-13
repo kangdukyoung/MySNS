@@ -25,11 +25,11 @@ ws.onmessage = function(msg){
         css = 'class=other';
     }
 
-    var item = `<div ${css}>
-                      <span><b>${data.username}</b>
-                      </span> <p class="data-date">[${data.date}]</p><br/>
-                      <span>${data.message}</span>
-                </div>`;
+    var item = `<section ${css}>
+                    <span class="data-username">${data.username}</span> 
+                    <span class="data-date">${data.date}</span><br/>
+                    <span>${data.message}</span>
+                </section>`;
 
     talk.innerHTML += item;
     talk.scrollTop=talk.scrollHeight;//스크롤바 하단으로 이동

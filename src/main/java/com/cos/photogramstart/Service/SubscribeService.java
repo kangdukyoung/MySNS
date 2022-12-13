@@ -26,7 +26,7 @@ public class SubscribeService {
 	public List<SubscribeDto> subList(int principalId, int pageUserId){
 		
 		StringBuffer sb = new StringBuffer();
-		sb.append("SELECT user.id, user.username, user.profileImageUrl, ");
+		sb.append("SELECT user.id, user.name, user.username, user.profileImageUrl, ");
 		sb.append("if ((SELECT 1 FROM subscribe WHERE fromUserId=? AND toUserId=user.id),1,0) subscribeState, ");
 		sb.append("if ((?=user.id),1,0) eqaulUserState ");
 		sb.append("FROM user inner JOIN subscribe ");
