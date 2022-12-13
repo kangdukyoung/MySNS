@@ -12,15 +12,28 @@
             <c:forEach var="chatroom" items="${chatrooms}">
                 <div id="room">
                     <div id="room-name">${chatroom.name}</div>
-                    <div id="creator-info">
-                        <img class="image" src="/upload/${chatroom.user.profileImageUrl}" onerror="this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'" />
-                        <div id="room-creator" id="room-creator">${chatroom.user.name}</div>
+                    <div id="room-description">${chatroom.description}</div>
+
+                    <div id="room-member">
+                        <div class="one-line">
+                            <span class="exist-number">현재 인원</span><p id="room-exist-${chatroom.id}">${chatroom.existNumber}</p>
+                        </div>
+                        <div class="two-line">
+                            <span class="restrict-number">최대 인원</span><p id="room-restrict-${chatroom.id}">${chatroom.restrictNumber}</p>
+                        </div>
                     </div>
 
-                    현재인원: <div id="room-exist-${chatroom.id}">${chatroom.existNumber}</div>
-                    제한인원: <div id="room-restrict-${chatroom.id}">${chatroom.restrictNumber}</div>
+                    <div id="creater-enterRoom">
+                        <div id="creator-info">
+                            <img class="image" src="/upload/${chatroom.user.profileImageUrl}" onerror="this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'" />
+                            <div id="room-creator" id="room-creator">${chatroom.user.name}</div>
+                        </div>
 
-                    <button id="enterRoom" onclick="enterRoom(event,${chatroom.id});"><a href="/chatroom/${chatroom.id}/mychat/${principal.user.id}">입장</a></button>
+                        <div class="enterRoom">
+                            <button id="enterRoom" onclick="enterRoom(event,${chatroom.id});"><a href="/chatroom/${chatroom.id}/mychat/${principal.user.id}">지금 참여</a></button>
+                        </div>
+                    </div>
+                    <%-- id값만 가져오기--%>
                     <input type="hidden" id="roomId" value="${chatroom.id}">
                 </div>
                 <br>

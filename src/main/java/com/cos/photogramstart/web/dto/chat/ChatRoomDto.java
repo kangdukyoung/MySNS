@@ -11,5 +11,6 @@ import javax.validation.constraints.NotBlank;
 public class ChatRoomDto {
     private String room_name;
     private int room_restrictNumber;
+    private String room_description;
 
 }

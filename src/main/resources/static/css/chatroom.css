@@ -1,21 +1,84 @@
-#room{
-    border:2px solid #95ffff;
-    border-radius: 14px;
-    padding: 30px;
-    margin: 0px 30px;
+.middle-page{
+    background-color: #f6f6f6;
 }
-#room-name{
+.makeRoom {
+    text-align: center;
+    margin-top: 20px;
+}
 
+.makeRoom-btn{
+    display: inline-block;
+    border:none;
+    width:120px;
+    height:50px;
+    background-color: #3d4756;
+    border-radius: 30px;
+    padding:10px;
 }
-#room:hover{
-    cursor: pointer;
+.makeRoom-btn:hover{
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
 }
+.makeRoom-btn a{
+    color:white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#room{
+    border:2px solid #3d4756;
+    border-radius: 14px;
+    padding: 20px;
+    margin: 0px 30px;
+    background-color: white;
+}
+#room:hover{
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+}
+
+/*room 요소*/
+#room-name{
+    font-weight: bold;
+    font-size:16px;
+}
+#room-description{
+    margin-top:4px;
+    font-size:14px;
+    color: #8d8d8d;
+}
+#room-member{
+    margin-top:10px;
+    margin-bottom: 12px;
+}
+#room-member .one-line{
+    display:flex;
+    color: #2c82ff;
+    font-size:14px;
+}
+#room-member .one-line .exist-number{
+    margin-right:5px;
+}
+#room-member .two-line{
+    margin-left:10px;
+    display:flex;
+    color: #8d8d8d;
+    font-size:14px;
+}
+#room-member .two-line .restrict-number{
+    margin-right:5px;
+}
+
+
 .image{
     width: 40px;
     height: 40px;
     border-radius: 50%;
     border:1px solid black;
+}
+
+
+#creater-enterRoom{
+    display:flex;
+    justify-content: space-between;
 }
 #creator-info{
     display: flex;
@@ -25,12 +88,24 @@
     margin-top: 10px;
     margin-left:5px;
 }
-
-.makeRoom {
-    text-align: center;
-    margin-top: 20px;
+#room-member{
+    display:flex;
 }
+.enterRoom{
+    text-align: right;
 
-makeRoom-btn{
+}
+#enterRoom{
     display: inline-block;
+    width:80px;
+    height:40px;
+    border-radius: 30px;
+    background-color: #467ed3;
+    border:none;
+
+}
+#enterRoom a{
+    color:white;
+    padding:7px;
+    font-weight: bold;
 }

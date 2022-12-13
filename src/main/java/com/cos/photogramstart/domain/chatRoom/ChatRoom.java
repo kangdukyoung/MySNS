@@ -27,9 +27,9 @@ public class ChatRoom {
 
     @JoinColumn(name="creator")
     @ManyToOne(fetch = FetchType.EAGER)
-    private User user;
+    private User user; //방장
 
-
+    private String description; //방 설명
     private int restrictNumber; //제한인원
     private int existNumber; //현재인원
 

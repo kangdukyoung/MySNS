@@ -7,6 +7,7 @@
         <form action="/createRoom" method="post">
             <div>방제목: <input name="room_name" type="text"></div>
             <div>제한인원: <input name="room_restrictNumber" type="text"></div>
+            <div>방 설명: <textarea name="room_description"></textarea></div>
             <button>생성</button>
         </form>
 

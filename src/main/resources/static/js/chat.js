@@ -27,7 +27,7 @@ ws.onmessage = function(msg){
 
     var item = `<div ${css}>
                       <span><b>${data.username}</b>
-                      </span> [${data.date}]<br/>
+                      </span> <p class="data-date">[${data.date}]</p><br/>
                       <span>${data.message}</span>
                 </div>`;
 
@@ -54,7 +54,7 @@ function submit(){
     }else{
         data.username = principalName;
         data.message = msg.value;
-        data.date = new Date().toLocaleString();
+        data.date = new Date().toLocaleTimeString();
         var temp = JSON.stringify(data);
         ws.send(temp);
     }
