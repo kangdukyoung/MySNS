@@ -12,5 +12,6 @@ public class ChatRoomDto {
     private String room_name;
     private int room_restrictNumber;
     private String room_description;
+    private String room_password;
 
 }

@@ -10,16 +10,22 @@
 
 .header {
   height: 54px;
-  background: #fff;
+  background: #ffffff;
   width: 100%;
-  border: 1px solid gainsboro;
-
+  border-bottom:1px solid #c9c9c9;
 }
 
 .header .con {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 100%;
+}
+
+.project-name{
+  margin-left:20px;
+  color:black;
+  font-size:20px;
 }
 
 
@@ -38,6 +44,23 @@
   color: #000000;
   margin-top: 6px;
 }
+
+.sub-list{
+  display:flex;
+}
+.sub-list li{
+  margin-right:20px;
+}
+.sub-list li a{
+  font-size:14px;
+}
+.logout-btn{
+  border:none;
+  background-color: white;
+}
+
+
+
 
 @media screen and (max-width: 935px) {
   .header .con {

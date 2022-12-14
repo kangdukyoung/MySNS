@@ -10,10 +10,10 @@
 		<div class="up-page">
 			<c:choose>
 				<c:when test="${dto.pageOwnerState}">
-					나의 프로필 정보
+					＊나의 프로필 정보
 				</c:when>
 				<c:otherwise>
-					프로필 정보
+					＊프로필 정보
 				</c:otherwise>
 			</c:choose>
 		</div>
@@ -86,10 +86,12 @@
 				<!--유저정보 및 사진등록 구독하기 End-->
 			</div>
 		</div>
+		<br>
+		<hr>
 		<div class="tab-content-title">
 			업로드한 사진
 		</div>
-
+		<br>
 		<div id="tab-content">
 			<div class="profileContainer">
 				<!--그냥 감싸는 div (지우면이미지커짐)-->

@@ -5,6 +5,7 @@ import com.cos.photogramstart.config.webSocket.ServerEndpointConfigurator;
 import com.cos.photogramstart.domain.chatRoom.ChatRoom;
 import com.cos.photogramstart.domain.chatRoom.ChatRoomRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,7 @@ import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.util.*;
 
+@Slf4j
 @RequiredArgsConstructor
 @Service
 @ServerEndpoint(value="/chatroom/{roomId}/mychat/{userId}",configurator = ServerEndpointConfigurator.class)
@@ -43,19 +45,18 @@ public class ChatService {
 
         if(!sessionSet.contains(s)) {
             sessionSet.add(s);
-            System.out.println("session open : " + s);
+            log.info("세션 열림 : " + s);
         }else {
-            System.out.println("이미 연결된 세션입니다.");
+            log.info("이미 연결된 세션");
         }
 
         System.out.println("*******방마다 세션 객체 불러오기*******");
         for(Integer key: sessionMap.keySet()){
-            System.out.print(key+"번방 : ");
+            log.info(key+"번방 : ");
             for(int j=0; j<sessionMap.get(key).size();j++){
-                System.out.println(sessionMap.get(key).get(j));
+                log.info(String.valueOf(sessionMap.get(key).get(j)));
             }
         }
-        System.out.println();
     }
 
     @OnMessage
@@ -77,16 +78,16 @@ public class ChatService {
 
         //같은 방에 있는 사람에게만 보낸다.
         for(Session session : tmpSessionSet) {
-            System.out.println("send data : " + msg);
+            log.info("전송 메세지 : " + msg);
             session.getBasicRemote().sendText(msg);
         }
-        System.out.println("----------------------------");
+        log.info("----------------------------");
     }
 
 
     @OnClose
     public void onClose(Session s) {
-        System.out.println("session close : " + s);
+        log.info("세션 닫힘 : " + s);
         sessionSet.remove(s);
 
         Integer findkey = -1;
@@ -102,9 +103,5 @@ public class ChatService {
         //방인원 -1
         ChatRoom chatRoom = chatRoomService.decreaseExist(findkey);
 
-
     }
-
-
-
 }

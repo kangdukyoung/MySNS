@@ -23,7 +23,8 @@ public class ChatRoom {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String name; //방제목
+    private String name; //방 이름
+    private String password; //방 비밀번호
 
     @JoinColumn(name="creator")
     @ManyToOne(fetch = FetchType.EAGER)

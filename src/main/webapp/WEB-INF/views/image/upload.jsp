@@ -10,7 +10,7 @@
 
         <div class="upload">
             <div class="upload-top">
-                SNS-project
+                MySNS
             </div>
             <form class="upload-form" action="/image"  method="post" enctype="multipart/form-data">
                 <div class="find-file">

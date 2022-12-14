@@ -19,11 +19,16 @@ public class ChatRoomService {
     private final ChatRoomRepository chatRoomRepository;
 
     @Transactional
-    public ChatRoom createRoom(String name, int restrictNumber, String description, User user){
+    public ChatRoom createRoom(String name, int restrictNumber, String description, String password, User user){
         ChatRoom chatRoom = new ChatRoom();
         chatRoom.setName(name);
         chatRoom.setRestrictNumber(restrictNumber);
         chatRoom.setDescription(description);
+
+        //변경필요
+        chatRoom.setPassword(password);
+
+
         chatRoom.setUser(user);
         return chatRoomRepository.save(chatRoom);
     }

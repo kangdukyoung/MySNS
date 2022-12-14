@@ -18,18 +18,18 @@
   display: flex;
 }
 .profileContainer {
-  border: 1px solid #cbcbcb;
+
   border-radius: 5px;
   display: flex;
   width: 100%;
 }
 
 .profile .profile-left {
-  width:30%;
+  /*width:30%;*/
 }
 
 .profile .profile-right {
-  width:70%;
+  /*width:70%;*/
 }
 
 .profile .profile-left .profile-img-wrap {
@@ -116,7 +116,7 @@
 /*중간div끝*/
 
 #tab-1-content{
-  border: 1px solid #c0c0c0;
+
 }
 #tab-1-content .title{
   font-size:13px;
@@ -133,11 +133,13 @@
 #tab-content #tab-1-content .tab-1-content-inner .img-box {
   position: relative;
   height: 200px;
+
 }
 #tab-content #tab-1-content .tab-1-content-inner .img-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 7px;
 }
 
 

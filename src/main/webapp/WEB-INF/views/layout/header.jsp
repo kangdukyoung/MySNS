@@ -13,7 +13,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MY SNS</title>
+<title>MySNS</title>
 
 	<!-- 제이쿼리 -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -55,8 +55,8 @@
 
 	<header class="header">
 		<div class="con">
-			<a href="/" class="logo">
-				<i class="fas fa-smile" ></i> SNS
+			<a href="/" class="project-name">
+				</i> MySNS
 			</a>
 			<nav class="navi">
 				<ul class="navi-list">
@@ -70,6 +70,30 @@
 						마이페이지
 					</a></li>
 				</ul>
+			</nav>
+			<nav class="sub">
+				<ul class="sub-list">
+					<c:choose>
+						<c:when test="${principal == null}">
+							<li class="sub-login"><a href="">
+								로그인
+							</a></li>
+							<li class="sub-signup"><a href="">
+								회원가입
+							</a></li>
+						</c:when>
+						<c:otherwise>
+							<li class="sub-signup"><a href="/auth/signup">
+								회원가입
+							</a></li>
+							<li class="sub-logout">
+								<button class="logout-btn" onclick="location.href='/logout'">로그아웃</button>
+							</li>
+						</c:otherwise>
+					</c:choose>
+
+				</ul>
+
 			</nav>
 		</div>
 	</header>

@@ -30,7 +30,6 @@ import lombok.RequiredArgsConstructor;
 @RestController
 public class CommentApiController {
 
-	
 	private final CommentService commentService;
 	
 	@PostMapping("api/comment")

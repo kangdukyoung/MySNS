@@ -40,7 +40,14 @@
                         </div>
 
                         <div class="enterRoom">
-                            <button id="enterRoom" onclick="enterRoom(event,${chatroom.id});"><a href="/chatroom/${chatroom.id}/mychat/${principal.user.id}">지금 참여</a></button>
+                            <c:choose>
+                                <c:when test="${chatroom.password != ''}">
+                                    <button onclick="popup('.modal-password')">잠금</button>
+                                </c:when>
+                                <c:otherwise>
+                                </c:otherwise>
+                            </c:choose>
+                            <button id="enterRoom" onclick="enterRoom(event,${chatroom.id},${chatroom.password});"><a href="/chatroom/${chatroom.id}/mychat/${principal.user.id}">지금 참여</a></button>
                         </div>
                     </div>
                     <%-- id값만 가져오기--%>
@@ -56,4 +63,21 @@
 
 </div>
 <div class="page-bottom"></div>
+</body>
+
+
+
+
+<!--비밀번호 입력 모달-->
+<div class="modal-password" onclick="modalImage()">
+    <div class="modal">
+        <p>비밀번호 입력</p>
+        <input id="inputPassword" type="text">
+        <button onclick="checkPassword()">확인</button>
+        <button onclick="closePopup('.modal-password')">취소</button>
+    </div>
+</div>
+
+
+
 <script src="/js/chatroom.js"></script>
