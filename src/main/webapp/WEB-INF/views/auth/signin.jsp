@@ -24,7 +24,7 @@
                 <div class="login__form">
                     <div class="login-title">
                         <div class="login-text">로그인</div>
-                        <div class="login-register">신규 회원이신가요?<span><a href="/auth/signup">새 계정 만들기</a></span></div>
+                        <div class="login-register">신규 회원이신가요?<span><a href="/auth/signup"> 새 계정 만들기</a></span></div>
                     </div>
 
                     <form class="login__input"  action="/auth/signin" method="POST">
@@ -35,26 +35,30 @@
 
 
                     <!-- Oauth 소셜로그인 -->
-                    <div class="login__facebook">
-                        <button onclick = "javascript:location.href='/oauth2/authorization/facebook'">
-                            <i class="fab fa-facebook-square"></i>
-                            <span>Facebook으로 로그인</span>
-                        </button>
+                    <div class="login__social">
+                        <div class="login__facebook">
+                            <button class="facebook-btn" onclick = "javascript:location.href='/oauth2/authorization/facebook'">
+                                <span>Facebook으로 로그인</span>
+                            </button>
+                        </div>
 
-                        <button onclick = "javascript:location.href='/oauth2/authorization/google'">
-                            <i class="far fa-comment-dots"></i>
-                            <span>Google로 로그인</span>
-                        </button>
+                        <div class="login__google">
+                            <button class="google-btn" onclick = "javascript:location.href='/oauth2/authorization/google'">
+                                <span>Google로 로그인</span>
+                            </button>
+                        </div>
 
-                        <button onclick = "javascript:location.href='/oauth2/authorization/naver'">
-                            <i class="far fa-comment-dots"></i>
-                            <span>naver로 로그인</span>
-                        </button>
+                        <div class="login__naver">
+                            <button class="naver-btn" onclick = "javascript:location.href='/oauth2/authorization/naver'">
+                                <span>naver로 로그인</span>
+                            </button>
+                        </div>
 
-                        <button onclick = "javascript:location.href='/oauth2/authorization/kakao'">
-                            <i class="far fa-comment-dots"></i>
-                            <span>kakao로 로그인</span>
-                        </button>
+                        <div class="login__kakao">
+                            <button class="kakao-btn" onclick = "javascript:location.href='/oauth2/authorization/kakao'">
+                                <span>kakao로 로그인</span>
+                            </button>
+                        </div>
                     </div>
 
 

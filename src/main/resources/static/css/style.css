@@ -82,14 +82,33 @@ button {
   border-radius: 5px;
 }
 
-/* 페이스북로그인 영역 */
-.login__facebook {
+/* 소셜로그인 영역*/
+.login__social {
   margin-top: 15px;
 }
-/*페이스북 로그인 버튼*/
-.login__facebook button {
+.login__social div{
+  margin-top:5px;
+}
+.login__social button {
   width: 80%;
   height: 30px;
+  border:none;
+  font-weight: bold;
+  border:1px solid black;
+  border-radius: 5px;
+}
+
+.facebook-btn{
+  background-color: #4d6db0;
+}
+.google-btn{
+  background-color: white;
+}
+.naver-btn{
+  background-color: #2DB400;
+}
+.kakao-btn{
+  background-color: #F7E600;
 }
 
 /* 버튼디자인 */
