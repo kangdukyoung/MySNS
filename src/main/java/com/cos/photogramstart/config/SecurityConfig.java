@@ -33,12 +33,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.anyRequest().permitAll()
 			.and()
 		.formLogin()
-			.loginPage("/auth/signin") //GET
-			.loginProcessingUrl("/auth/signin") //POST -> 시큐리티가 로그인 프로세스 진행
+			.loginPage("/auth/signin")
+			.loginProcessingUrl("/auth/signin")
 			.defaultSuccessUrl("/")
 			.and()
-			.oauth2Login() //form로그인도 하는데, oauth2로그인도 할거야!
-			.userInfoEndpoint() //oauth2로그인을 하면 회원정보를 바로 받을수있다.
+			.oauth2Login() //oauth2로그인도 추가로 진행
+			.userInfoEndpoint() //oauth2로그인 성공 후에 사용자 정보를 바로 가져온다.
 			.userService(oAuth2DetailsService);
 	}
 }

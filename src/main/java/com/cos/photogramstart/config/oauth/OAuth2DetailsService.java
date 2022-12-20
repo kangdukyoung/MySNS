@@ -3,6 +3,7 @@ package com.cos.photogramstart.config.oauth;
 import java.util.Map;
 import java.util.UUID;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
@@ -16,6 +17,7 @@ import com.cos.photogramstart.domain.user.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class OAuth2DetailsService extends DefaultOAuth2UserService{
@@ -29,17 +31,17 @@ public class OAuth2DetailsService extends DefaultOAuth2UserService{
 
 		OAuth2UserInfo oAuth2UserInfo = null;
 		if(userRequest.getClientRegistration().getRegistrationId().equals("google")){
-			System.out.println("구글 로그인 요청");
+			log.info("구글 로그인 요청");
 			oAuth2UserInfo = new GoogleUserInfo(oauth2User.getAttributes());
 
 		}else if(userRequest.getClientRegistration().getRegistrationId().equals("facebook")){
-			System.out.println("페이스북 로그인 요청");
+			log.info("페이스북 로그인 요청");
 			oAuth2UserInfo = new FacebookUserInfo(oauth2User.getAttributes());
 		}else if(userRequest.getClientRegistration().getRegistrationId().equals("naver")){
-			System.out.println("네이버 로그인 요청");
+			log.info("네이버 로그인 요청");
 			oAuth2UserInfo = new NaverUserInfo((Map)oauth2User.getAttributes().get("response"));
 		}else if(userRequest.getClientRegistration().getRegistrationId().equals("kakao")){
-			System.out.println("카카오 로그인 요청");
+			log.info("카카오 로그인 요청");
 			oAuth2UserInfo = new KakaoUserInfo(oauth2User.getAttributes());
 		}
 
@@ -50,7 +52,8 @@ public class OAuth2DetailsService extends DefaultOAuth2UserService{
 
 
 		User userEntity = userRepository.findByUsername(username);
-		if(userEntity==null) { //최초로그인 시
+
+		if(userEntity==null) { //최초 로그인 시
 			User user = User.builder()
 					.username(username)
 					.password(password)
@@ -64,4 +67,3 @@ public class OAuth2DetailsService extends DefaultOAuth2UserService{
 		}
 	}
 }
-
