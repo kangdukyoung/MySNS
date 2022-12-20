@@ -25,9 +25,7 @@ public class OAuth2DetailsService extends DefaultOAuth2UserService{
 	@Override
 	public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
 
-		//oauth2User에는 public_profile, email이 들어가 있음.
 		OAuth2User oauth2User = super.loadUser(userRequest);
-
 
 		OAuth2UserInfo oAuth2UserInfo = null;
 		if(userRequest.getClientRegistration().getRegistrationId().equals("google")){
@@ -40,6 +38,9 @@ public class OAuth2DetailsService extends DefaultOAuth2UserService{
 		}else if(userRequest.getClientRegistration().getRegistrationId().equals("naver")){
 			System.out.println("네이버 로그인 요청");
 			oAuth2UserInfo = new NaverUserInfo((Map)oauth2User.getAttributes().get("response"));
+		}else if(userRequest.getClientRegistration().getRegistrationId().equals("kakao")){
+			System.out.println("카카오 로그인 요청");
+			oAuth2UserInfo = new KakaoUserInfo(oauth2User.getAttributes());
 		}
 
 		String username = oAuth2UserInfo.getProvider() + oAuth2UserInfo.getUsername();
@@ -47,14 +48,9 @@ public class OAuth2DetailsService extends DefaultOAuth2UserService{
 		String email = oAuth2UserInfo.getEmail();
 		String name = oAuth2UserInfo.getName();
 
-//		String username = "facebook_"+(String)userInfo.get("id");
-//		String password = new BCryptPasswordEncoder().encode(UUID.randomUUID().toString());
-//		String email = (String)userInfo.get("email");
-//		String name = (String)userInfo.get("name");
 
 		User userEntity = userRepository.findByUsername(username);
-
-		if(userEntity==null) { //페이스북 최초로그인이라면
+		if(userEntity==null) { //최초로그인 시
 			User user = User.builder()
 					.username(username)
 					.password(password)
@@ -66,10 +62,6 @@ public class OAuth2DetailsService extends DefaultOAuth2UserService{
 		}else {
 			return new PrincipalDetail(userEntity);
 		}
-		
-		
 	}
-
-
 }
 
