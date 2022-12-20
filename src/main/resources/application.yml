@@ -29,7 +29,7 @@ spring:
   jpa:
     open-in-view: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
@@ -54,7 +54,15 @@ spring:
             scope: 
             - public_profile
             - email
-          
+          google:
+            clientId: '467513416157-dk0p7noq44cub5740ugesn2hviclbe2k.apps.googleusercontent.com'
+            clientSecret: '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'
+            redirect-uri: http://localhost:8080/login/oauth2/code/google
+            scope:
+              - email
+              - profile
+
+
 
 file:
   path: C:/Users/kang4/spring/instagram/upload/

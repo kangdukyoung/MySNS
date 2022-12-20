@@ -27,6 +27,7 @@ public class PrincipalDetail implements UserDetails,OAuth2User{
 	}
 
 
+	//권한은 한개가 아닐 수 있다.
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		Collection<GrantedAuthority> collectors = new ArrayList<>();
@@ -66,4 +67,6 @@ public class PrincipalDetail implements UserDetails,OAuth2User{
 	public String getName() {
 		return null;
 	}
+
+
 }

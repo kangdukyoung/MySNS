@@ -61,7 +61,7 @@
 			<nav class="navi">
 				<ul class="navi-list">
 					<li class="navi-item"><a href="/">
-						좋아요목록
+						친구 검색
 						</a></li>
 					<li class="navi-item"><a href="/chatroom/">
 						오픈채팅
@@ -75,17 +75,17 @@
 				<ul class="sub-list">
 					<c:choose>
 						<c:when test="${principal == null}">
-							<li class="sub-login"><a href="">
+							<li class="sub-login"><a href="/auth/signin">
 								로그인
 							</a></li>
-							<li class="sub-signup"><a href="">
+							<li class="sub-signup"><a href="/auth/signup">
 								회원가입
 							</a></li>
 						</c:when>
 						<c:otherwise>
-							<li class="sub-signup"><a href="/auth/signup">
-								회원가입
-							</a></li>
+							<li class="sub-welcome">
+								${principal.user.name}님, 환영합니다!
+							</li>
 							<li class="sub-logout">
 								<button class="logout-btn" onclick="location.href='/logout'">로그아웃</button>
 							</li>

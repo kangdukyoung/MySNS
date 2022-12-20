@@ -28,17 +28,17 @@
   font-size:20px;
 }
 
-
-
 .navi > .navi-list {
   display: flex;
 }
+
 .navi > .navi-list .navi-item {
 
   text-align: center;
   margin: 0 15px;
   display: flex;
 }
+
 .navi > .navi-list .navi-item a {
   font-size: 14px;
   color: #000000;
@@ -47,6 +47,10 @@
 
 .sub-list{
   display:flex;
+}
+.sub-welcome{
+  font-size:16px;
+  color: #184879;
 }
 .sub-list li{
   margin-right:20px;

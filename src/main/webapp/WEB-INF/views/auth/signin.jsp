@@ -41,9 +41,9 @@
                             <span>Facebook으로 로그인</span>
                         </button>
                         <div class="login__kakao">
-                            <button onclick = "javascript:location.href='/oauth2/authorization/facebook'">
+                            <button onclick = "javascript:location.href='/oauth2/authorization/google'">
                                 <i class="far fa-comment-dots"></i>
-                                <span>카카오로 로그인</span>
+                                <span>Google로 로그인</span>
                             </button>
                         </div>
                         <!-- Oauth 소셜로그인end -->
