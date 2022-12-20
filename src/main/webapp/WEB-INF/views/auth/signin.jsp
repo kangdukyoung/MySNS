@@ -40,14 +40,24 @@
                             <i class="fab fa-facebook-square"></i>
                             <span>Facebook으로 로그인</span>
                         </button>
-                        <div class="login__kakao">
-                            <button onclick = "javascript:location.href='/oauth2/authorization/google'">
-                                <i class="far fa-comment-dots"></i>
-                                <span>Google로 로그인</span>
-                            </button>
-                        </div>
-                        <!-- Oauth 소셜로그인end -->
+
+                        <button onclick = "javascript:location.href='/oauth2/authorization/google'">
+                            <i class="far fa-comment-dots"></i>
+                            <span>Google로 로그인</span>
+                        </button>
+
+                        <button onclick = "javascript:location.href='/oauth2/authorization/naver'">
+                            <i class="far fa-comment-dots"></i>
+                            <span>naver로 로그인</span>
+                        </button>
+
+                        <button onclick = "javascript:location.href='/oauth2/authorization/kakao'">
+                            <i class="far fa-comment-dots"></i>
+                            <span>kakao로 로그인</span>
+                        </button>
                     </div>
+
+
                 </div>
 
             </div>
