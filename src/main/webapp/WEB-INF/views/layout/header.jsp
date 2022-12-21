@@ -23,6 +23,7 @@
 			src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs.min.js"></script>
 
 	<!-- Style -->
+	<link rel="stylesheet" href="/css/createchatroom.css">
 	<link rel="stylesheet" href="/css/chatroom.css">
 	<link rel="stylesheet" href="/css/chat.css">
 	<link rel="stylesheet" href="/css/header.css">

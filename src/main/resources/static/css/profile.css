@@ -3,10 +3,7 @@
 .middle-page{
   width:30%;
 }
-.page-bottom{
-  background-color: #f6f6f6;
-  height:400px;
-}
+
 .up-page{
   padding-top:70px;
   padding-bottom:40px;
@@ -108,7 +105,7 @@
 
 /*중간div*/
 .tab-content-title{
-  font-size:13px;
+  font-size:20px;
   font-weight: bold;
   padding-top:40px;
   background-color: #f6f6f6;

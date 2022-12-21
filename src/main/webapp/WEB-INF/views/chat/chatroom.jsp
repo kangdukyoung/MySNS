@@ -40,14 +40,7 @@
                         </div>
 
                         <div class="enterRoom">
-                            <c:choose>
-                                <c:when test="${chatroom.password != ''}">
-                                    <button onclick="popup('.modal-password')">잠금</button>
-                                </c:when>
-                                <c:otherwise>
-                                </c:otherwise>
-                            </c:choose>
-                            <button id="enterRoom" onclick="enterRoom(event,${chatroom.id},${chatroom.password});"><a href="/chatroom/${chatroom.id}/mychat/${principal.user.id}">지금 참여</a></button>
+                            <button id="enterRoom" onclick="enterRoom(event,${chatroom.id});"><a href="/chatroom/${chatroom.id}/mychat/${principal.user.id}">지금 참여</a></button>
                         </div>
                     </div>
                     <%-- id값만 가져오기--%>

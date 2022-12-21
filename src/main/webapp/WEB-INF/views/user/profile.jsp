@@ -89,7 +89,7 @@
 		<br>
 		<hr>
 		<div class="tab-content-title">
-			업로드한 사진
+			＊업로드한 사진
 		</div>
 		<br>
 		<div id="tab-content">

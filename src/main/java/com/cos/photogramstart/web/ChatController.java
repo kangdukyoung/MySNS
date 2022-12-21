@@ -45,7 +45,7 @@ public class ChatController {
     //채팅방 생성
     @PostMapping("/createRoom")
     public String postCreateRoom(ChatRoomDto chatRoomDto,@AuthenticationPrincipal PrincipalDetail principalDetail){
-        chatRoomService.createRoom(chatRoomDto.getRoom_name(),chatRoomDto.getRoom_restrictNumber(),chatRoomDto.getRoom_description(), chatRoomDto.getRoom_password(), principalDetail.getUser());
+        chatRoomService.createRoom(chatRoomDto.getRoom_name(),chatRoomDto.getRoom_restrictNumber(),chatRoomDto.getRoom_description(), principalDetail.getUser());
         return "redirect:/chatroom";
     }
 

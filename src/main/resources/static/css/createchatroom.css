@@ -1,0 +1,55 @@
+@import "header.css";
+
+.creating{
+    text-align: center;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    padding-bottom:50px;
+}
+.create-title{
+    font-size:22px;
+    border:1px solid gray;
+    border-radius: 5px;
+    background-color: #3d4756;
+    color:white;
+}
+.create-content{
+    margin-top:30px;
+}
+.create-content input{
+    margin-top:5px;
+    border:1px solid gray;
+    border-radius: 3px;
+    width:50%;
+    height:30px;
+}
+.create-content textarea{
+    margin-top:5px;
+    border:1px solid gray;
+    border-radius: 3px;
+    width:50%;
+}
+.create-content div{
+    margin-top:15px;
+}
+.create-content div div{
+    font-size:18px;
+}
+
+.restrict-comment{
+    font-size:13px;
+    color:red;
+    margin-left:10px;
+}
+
+
+.complete-btn{
+    width:50%;
+    margin-top:20px;
+    border-radius: 4px;
+    background-color: #3d4756;
+    color:white;
+    font-weight: bold;
+    height:30px;
+    border:none;
+}
