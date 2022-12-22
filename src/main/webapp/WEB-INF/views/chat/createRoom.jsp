@@ -24,7 +24,7 @@
 
                     <div>
                         <div class="restrictNumber">제한 인원<span class="restrict-comment">＊필수</span></div>
-                        <input name="room_restrictNumber" type="number" required >
+                        <input name="room_restrictNumber" type="number" min="1" max="100">
                     </div>
 
                     <button class="complete-btn">생성</button>

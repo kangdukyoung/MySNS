@@ -89,7 +89,7 @@ function getStoryItem(image) {
         item += `<div class="sl__item__contents__comment" id="storyCommentItem-${comment.id}">
 					<p>
                        <img class="commenter_image" src="/upload/${comment.user.profileImageUrl}" onerror="this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'" />
-                       ${comment.user.username}: ${comment.content}
+                       ${comment.user.name}: ${comment.content}
 					</p>`;
 
         if (principalId == comment.user.id) {
