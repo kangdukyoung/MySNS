@@ -15,6 +15,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MySNS</title>
 
+	<!-- bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
 	<!-- 제이쿼리 -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -23,13 +26,13 @@
 			src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.5/sockjs.min.js"></script>
 
 	<!-- Style -->
+	<link rel="stylesheet" href="/css/friend.css">
 	<link rel="stylesheet" href="/css/createchatroom.css">
 	<link rel="stylesheet" href="/css/chatroom.css">
 	<link rel="stylesheet" href="/css/chat.css">
 	<link rel="stylesheet" href="/css/header.css">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/story.css">
-	<link rel="stylesheet" href="/css/popular.css">
 	<link rel="stylesheet" href="/css/profile.css">
 	<link rel="stylesheet" href="/css/upload.css">
 	<link rel="stylesheet" href="/css/update.css">
@@ -61,7 +64,7 @@
 			</a>
 			<nav class="navi">
 				<ul class="navi-list">
-					<li class="navi-item"><a href="/">
+					<li class="navi-item"><a href="/search/">
 						친구 검색
 						</a></li>
 					<li class="navi-item"><a href="/chatroom/">

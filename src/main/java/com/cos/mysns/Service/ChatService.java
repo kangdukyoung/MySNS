@@ -81,7 +81,6 @@ public class ChatService {
         log.info("----------------------------");
     }
 
-
     @OnClose
     public void onClose(Session s) {
         log.info("세션 닫힘 : " + s);

@@ -24,7 +24,6 @@
                 <div class="creator-name">${chatroom.user.name}</div>
             </div>
 
-
             <div id='talk'>
             </div>
             <div id='sendZone'>
@@ -37,5 +36,4 @@
     <div class="right-page"></div>
 </div>
 <div class="page-bottom"></div>
-
 <script src='/js/chat.js'></script>
