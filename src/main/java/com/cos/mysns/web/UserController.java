@@ -34,10 +34,4 @@ public class UserController {
 		return "user/update";
 	}
 
-	//채팅
-//	@GetMapping("/user/{id}/chat")
-//	public String chat(@PathVariable int id, @AuthenticationPrincipal PrincipalDetail principalDetail) {
-//		return "user/chat";
-//	}
-
 }

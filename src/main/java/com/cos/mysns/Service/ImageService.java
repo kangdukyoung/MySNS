@@ -38,9 +38,7 @@ public class ImageService {
 	@Transactional
 	public Page<Image> 이미지불러오기(int principalId, Pageable pageable) {
 		Page<Image> imageList = imageRepository.mystory(principalId,pageable);
-		
-		
-		
+
 		//2로 로그인
 		//images에 좋아요상태 담아야됨.
 		imageList.forEach((image)->{

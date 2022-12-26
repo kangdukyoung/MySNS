@@ -222,7 +222,7 @@ function deleteComment(commentId) {
 		dataType: "json"
 	}).done(res => {
 		console.log("성공", res);
-
+        alert("댓글이 삭제되었습니다.")
 		$(`#storyCommentItem-${commentId}`).remove();
 	}).fail(error => {
 		console.log("오류", error);
