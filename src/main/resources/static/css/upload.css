@@ -1,7 +1,7 @@
 @import "header.css";
 
 .upload {
-  width: 600px;
+  width: 100%;
   height:600px;
   border-radius: 7px;
 }
@@ -67,10 +67,10 @@
 }
 
 .upload .upload-form .upload-form-detail textarea{
-  width: 380px;
+  width:70%;
 }
 .upload .upload-form .upload-form-detail button {
-  width:220px;
+  width:70%;
 }
 .upload .upload-form .upload-form-detail .textarea-input {
   text-indent: 1px;

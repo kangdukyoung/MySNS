@@ -75,7 +75,7 @@
 						<ul>
 							<li><a href=""> 게시물<span>${dto.imageCount}</span>
 							</a></li>
-							<li><a href="javascript:subscribeInfoModalOpen(${dto.user.id});">팔로잉<span>${dto.subscribeCount}</span>
+							<li><a href="javascript:subscribeInfoModalOpen(${dto.user.id});">팔로우<span>${dto.subscribeCount}</span>
 							</a></li>
 						</ul>
 					</div>
@@ -100,7 +100,14 @@
 
 						<c:forEach var="image" items="${dto.user.images }">
 							<div class="img-box">
-								<a href=""> <img src="/upload/${image.postImageUrl}" /></a>
+								<img src="/upload/${image.postImageUrl}" />
+								<c:choose>
+									<c:when test="${dto.pageOwnerState}">
+										<div id="img-delete-div"><button type="button" class="img-delete-btn" onclick="location.href='/delete/${image.id}'">삭제</button></div>
+									</c:when>
+									<c:otherwise>
+									</c:otherwise>
+								</c:choose>
 							</div>
 						</c:forEach>
 
@@ -136,10 +143,9 @@
 		<button onclick="closePopup('.modal-image')">취소</button>
 	</div>
 </div>
+<!--프로필사진 바꾸기 모달 end-->
 
-<!--프로필사진 바꾸기 모달end-->
-
-
+<!-- 구독정보 모달-->
 <div class="modal-subscribe">
 	<div class="subscribe">
 		<div class="subscribe-header">
@@ -153,6 +159,6 @@
 		</div>
 	</div>
 </div>
-
+<!-- 구독정보 모달 end-->
 
 <script src="/js/profile.js"></script>

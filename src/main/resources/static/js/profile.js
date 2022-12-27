@@ -1,3 +1,5 @@
+
+
 // (1) 유저 프로파일 페이지 구독하기, 구독취소
 function toggleSubscribe(toUserId, obj) {
 	if ($(obj).text() === "구독취소") {

@@ -15,7 +15,7 @@
             <form class="upload-form" action="/image"  method="post" enctype="multipart/form-data">
                 <div class="find-file">
                     <input class="upload-name" value="첨부파일" placeholder="첨부파일">
-                    <label for="file">파일찾기</label>
+                    <label for="file">찾기</label>
                     <input type="file" name="file" id = "file" onchange="imageChoose(this)"/>
                 </div>
                 <div class="upload-img">

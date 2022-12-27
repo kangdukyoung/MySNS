@@ -16,14 +16,14 @@ public class LikesService {
 	private final LikesRepository likesRepository;
 	
 	@Transactional
-	public void 좋아요(int imageId, int principalId) {
+	public void doLike(int imageId, int principalId) {
 		likesRepository.mylikes(imageId, principalId);
 		
 		
 	}
 	
 	@Transactional
-	public void 좋아요취소(int imageId, int principalId) {
+	public void notLike(int imageId, int principalId) {
 		likesRepository.myunlikes(imageId, principalId);
 		
 		

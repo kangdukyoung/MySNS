@@ -3,17 +3,7 @@ package com.cos.mysns.domain.image;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OrderBy;
-import javax.persistence.PrePersist;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 import com.cos.mysns.domain.comment.Comment;
 import com.cos.mysns.domain.likes.Likes;
@@ -43,9 +33,9 @@ public class Image {
 	@ManyToOne(fetch = FetchType.EAGER)
 	private User user;
 	
-	//이미지 좋아요
+	//좋아요
 	@JsonIgnoreProperties({"image"})
-	@OneToMany(mappedBy = "image")
+	@OneToMany(mappedBy = "image", cascade = {CascadeType.ALL},orphanRemoval = true)
 	private List<Likes> likes;
 
 	//댓글

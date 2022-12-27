@@ -23,7 +23,7 @@ public class CommentService {
 	private final ImageRepository imageRepository;
 	
 	@Transactional
-	public Comment 댓글쓰기(String content, int imageId, int principalId) {
+	public Comment createComment(String content, int imageId, int principalId) {
 		
 
 		Image imageEntity = imageRepository.findById(imageId).orElseThrow(()->{
@@ -45,7 +45,7 @@ public class CommentService {
 	}
 	
 	@Transactional
-	public void 댓글삭제(int id) {
+	public void deleteComment(int id) {
 		try {
 			commentRepository.deleteById(id);
 		}catch(Exception e) {

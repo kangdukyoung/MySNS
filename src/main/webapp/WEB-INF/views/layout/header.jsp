@@ -62,7 +62,7 @@
 			<nav class="navi">
 				<ul class="navi-list">
 					<li class="navi-item"><a href="/search/">
-						친구 검색
+						검색
 						</a></li>
 					<li class="navi-item"><a href="/chatroom/">
 						오픈채팅

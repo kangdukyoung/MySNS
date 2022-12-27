@@ -8,6 +8,8 @@ import java.util.UUID;
 
 import javax.transaction.Transactional;
 
+import com.cos.mysns.handler.ex.CustomApiException;
+import com.cos.mysns.handler.ex.CustomException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -25,24 +27,15 @@ import lombok.RequiredArgsConstructor;
 public class ImageService {
 
 	private final ImageRepository imageRepository;
-	
 
+	//모든 이미지 불러오기
 	@Transactional
-	public List<Image> 인기이미지() {
-		
-		return imageRepository.myPopular();
-	}
-	
-	
-	
-	@Transactional
-	public Page<Image> 이미지불러오기(int principalId, Pageable pageable) {
+	public Page<Image> loadAllImages(int principalId, Pageable pageable) {
 		Page<Image> imageList = imageRepository.mystory(principalId,pageable);
 
 		//2로 로그인
-		//images에 좋아요상태 담아야됨.
+		//images에 좋아요 담기
 		imageList.forEach((image)->{
-			
 			image.setLikeCount(image.getLikes().size()); //좋아요 수 넣어주기
 			
 			image.getLikes().forEach((like)->{
@@ -60,7 +53,7 @@ public class ImageService {
 	private String uploadFolder;
 	
 	@Transactional
-	public void 사진업로드(ImageUploadDto imageUploadDto, PrincipalDetail principalDetail) {
+	public void uploadImage(ImageUploadDto imageUploadDto, PrincipalDetail principalDetail) {
 		UUID uuid = UUID.randomUUID();
 		String imageFileName = uuid+"_"+imageUploadDto.getFile().getOriginalFilename();
 		Path imageFilePath = Paths.get(uploadFolder+imageFileName);
@@ -75,12 +68,16 @@ public class ImageService {
 		//image테이블에 저장
 		Image image = imageUploadDto.toEntity(imageFileName, principalDetail.getUser());
 		imageRepository.save(image);
-		
-		
 	}
-	
-	
-	
-	
-	
+
+	//이미지 삭제
+	@Transactional
+	public void deleteImage(int id){
+		try {
+			imageRepository.deleteById(id);
+		}catch(Exception e) {
+			throw new CustomException(e.getMessage());
+		}
+	}
+
 }

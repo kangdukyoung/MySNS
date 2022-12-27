@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.cos.mysns.Service.ImageService;
@@ -21,37 +23,35 @@ import lombok.RequiredArgsConstructor;
 public class ImageController {
 
 	private final ImageService imageService;
-	
+
+
 	@GetMapping({"/","/image/story"})
 	public String story(@AuthenticationPrincipal PrincipalDetail principalDetail) {
-
 		return "image/story";
 	}
-	
-	@GetMapping("/image/popular")
-	public String popular(Model model) {
-		List<Image> images = imageService.인기이미지();
-		model.addAttribute("images",images);
-		
-		return "image/popular";
-	}
-	
+
 	@GetMapping("/image/upload")
 	public String upload() {
 		return "image/upload";
 	}
 	
 	@PostMapping("/image")
-	public String imageUpload(ImageUploadDto imageUploadDto, @AuthenticationPrincipal PrincipalDetail principalDetail) {
+	public String uploadImage(ImageUploadDto imageUploadDto, @AuthenticationPrincipal PrincipalDetail principalDetail) {
 		
 		if(imageUploadDto.getFile().isEmpty()){
 			throw new CustomValidationException("이미지를 넣어주세요.",null);
 		}
 		else {
-			imageService.사진업로드(imageUploadDto, principalDetail);
+			imageService.uploadImage(imageUploadDto, principalDetail);
 			return "redirect:/user/"+principalDetail.getUser().getId();
 		}
-
 	}
-	
+
+
+	@GetMapping("/delete/{imageId}")
+	public String deleteImage(@PathVariable int imageId, @AuthenticationPrincipal PrincipalDetail principalDetail){
+		imageService.deleteImage(imageId);
+
+		return "redirect:/user/"+principalDetail.getUser().getId();
+	}
 }
